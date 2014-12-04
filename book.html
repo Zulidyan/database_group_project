@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title>Book Info</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<div>
+  ISBN: {{ isbn }}.
+  Page count: {{ pages }}
+
+{#  Publication date: <em>{{ pub_date }}</em>#}
+</div>
+
+<h2>Authors</h2>
+<ul>
+{{ authors }}
+</ul>
+
+<h2>Subjects</h2>
+<ul>
+{% for cat_description in categories %}
+        {{ cat_description }}
+    {% endfor %}
+</ul>
+
+<h2>Edition</h2>
+{#if edition_name is null, default to revision (default_ed)#}
+{{ edition }}
+
+<h2>Publisher</h2>
+{{ publisher }}
+
+<h2>Description</h2>
+{{ description }}
+
+
+</body>
+</html>
